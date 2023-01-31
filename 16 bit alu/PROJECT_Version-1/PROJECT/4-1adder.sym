@@ -1,0 +1,35 @@
+USER SYMBOL by DSCH 3.5
+DATE 15/10/2018 09:37:59
+SYM  #4-1ad
+BB(0,0,20,50)
+TITLE 10 -7  #4-1ad
+MODEL 6000
+REC(5,5,10,40)
+PIN(0,40,0.00,0.00)d
+PIN(0,30,0.00,0.00)c
+PIN(0,20,0.00,0.00)b
+PIN(0,10,0.00,0.00)a
+PIN(20,20,2.00,1.00)o
+LIG(0,40,5,40)
+LIG(0,30,5,30)
+LIG(0,20,5,20)
+LIG(0,10,5,10)
+LIG(15,20,20,20)
+LIG(5,5,5,45)
+LIG(5,5,15,5)
+LIG(15,5,15,45)
+LIG(15,45,5,45)
+VLG module sym12( d,c,b,a,o);
+VLG  input d,c,b,a;
+VLG  output o;
+VLG  wire w2,w3,w4,w5,w6,w12,w13,w14;
+VLG  wire w15;
+VLG  and #(3) and3_1(w12,a,b,c);
+VLG  and #(3) and2_2(o,d,w12);
+VLG  xor #(3) xor2_1_3(w13,w2,w3);
+VLG  xor #(1) xor2_2_4(w5,w13,w4);
+VLG  and #(2) and2_3_5(w14,w4,w13);
+VLG  and #(2) and2_4_6(w15,w3,w2);
+VLG  or #(1) or2_5_7(w6,w14,w15);
+VLG endmodule
+FSYM
